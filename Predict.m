@@ -2,7 +2,7 @@
 % Predict
 % ---------------------------------------------------
 
-function [x, P] = Predict(x_i, P, dt)
+function [x, P] = Predict(x_i, P, dt, Qi)
 
     x = x_i;
 
@@ -22,7 +22,7 @@ function [x, P] = Predict(x_i, P, dt)
               0.0      0.0    (dt^4)/4   0.0      0.0    (dt^3)/2  ; 
             (dt^3)/2    0.0      0.0    dt^2      0.0       0.0    ; 
               0.0    (dt^3)/2    0.0     0.0     dt^2       0.0    ; 
-              0.0      0.0    (dt^3)/2   0.0      0.0      dt^2    ];
+              0.0      0.0    (dt^3)/2   0.0      0.0      dt^2    ] * Qi;
 
     % Process noise
 
