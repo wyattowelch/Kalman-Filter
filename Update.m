@@ -8,7 +8,6 @@ function [x, P] = Update(z, x_i, P, R, H)
     I = eye(6);
 
     y = z - H * x;
-    % Gain
     S = (H * P * H') + R;
     K = (P * H') / S;
 
