@@ -15,6 +15,7 @@ g = [0, 0, 9.81];
 time = seconds(timeofday(data.data.Acceleration.Timestamp(:)) ...
     - timeofday(data.data.Acceleration.Timestamp(1)));
 dt = .1;
+Qi = .9; % Covariance Matrix Adjuster 
 
 % Subtracting Gravity, and Calculate V and P
 
@@ -140,4 +141,3 @@ legend("Initial","Filtered")
 xlabel("time")
 ylabel("Z Position")
 hold off
-
